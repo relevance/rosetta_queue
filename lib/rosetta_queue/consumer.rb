@@ -27,7 +27,7 @@ module RosettaQueue
     end
     
     def disconnect
-      connection.disconnect(@message_handler)
+      connection.disconnect
     end
 
     private
