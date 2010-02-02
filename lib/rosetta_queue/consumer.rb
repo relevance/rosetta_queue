@@ -25,6 +25,10 @@ module RosettaQueue
       rescue Exception=>e
         RosettaQueue.logger.error("Caught exception in Consumer#receive: #{$!}\n" + e.backtrace.join("\n\t"))
     end
+    
+    def disconnect
+      connection.disconnect(@message_handler)
+    end
 
     private
 
